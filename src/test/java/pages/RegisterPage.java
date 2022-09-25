@@ -15,10 +15,16 @@ public class RegisterPage extends BasePage {
     private By passwordConfirmInput = By.id("create_passwordmatch");
     private By createNewAccountButton = By.xpath("//div[contains(@class, 'submit_sect')]//button[@type='submit']");
     private By requiredFieldMessage = By.xpath("//*[text()='This field is required.']");
+    private By privacyPolicy = By.xpath("//a[contains(@href, 'https://www.finalsurge.com/PrivacyTerms#privacy')]");
 
 
     public RegisterPage(WebDriver driver) {
         super(driver);
+    }
+
+    @Step("Open register page")
+    public void openRegisterAccountPage() {
+        driver.get(Urls.REGISTER_URL);
     }
 
     @Step("Register account")
@@ -43,6 +49,11 @@ public class RegisterPage extends BasePage {
         driver.findElement(passwordInput).sendKeys(password);
         driver.findElement(passwordConfirmInput).sendKeys(password);
         driver.findElement(createNewAccountButton).click();
+    }
+
+    @Step("Open Privacy Policy page")
+    public void openPrivacyPolicyPage() {
+        driver.findElement(privacyPolicy).click();
     }
 
     public boolean isRequiredFieldMessageDisplayed() {

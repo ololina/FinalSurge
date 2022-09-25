@@ -11,8 +11,8 @@ public class SettingsPage extends BasePage {
 
     private By editProfilesButton = By.className("dropdown-toggle");
     private By nameField = By.xpath("//div[contains(@class, 'span10')]//p[@class='formSep']");
-    private By maleGenderChoosen = By.xpath("//div[contains(@class, 'span10')]//p[text()=' Male']");
-    private By femaleGenderChoosen = By.xpath("//div[contains(@class, 'span10')]//p[text()=' Female']");
+    private By maleGenderChosen = By.xpath("//div[contains(@class, 'span10')]//p[text()=' Male']");
+    private By femaleGenderChosen = By.xpath("//div[contains(@class, 'span10')]//p[text()=' Female']");
 
     public void clickEditProfile() {
         driver.findElement(editProfilesButton).click();
@@ -24,12 +24,12 @@ public class SettingsPage extends BasePage {
     }
 
     public String getMaleGender() {
-        String gender = driver.findElement(maleGenderChoosen).getText();
+        String gender = driver.findElement(maleGenderChosen).getText();
         return gender;
     }
 
     public String getFemaleGender() {
-        String gender = driver.findElement(femaleGenderChoosen).getText();
+        String gender = driver.findElement(femaleGenderChosen).getText();
         return gender;
     }
 }

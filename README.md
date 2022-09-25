@@ -8,3 +8,5 @@ cases:
 6. Update last name in settings
 7. Choose male gender in settings
 8. Choose female gender in settings
+9. Leave feedback test
+10. Open Privacy Policy text

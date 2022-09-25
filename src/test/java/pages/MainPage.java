@@ -15,7 +15,6 @@ public class MainPage extends BasePage {
     private By giveFeedbackButton = By.xpath("//*[contains(@href, 'Feedback.cshtml')]");
 
 
-
     public boolean isLogoutButtonDisplayed() {
         boolean isLogoutButtonDisplayed = driver.findElement(logoutButton).isDisplayed();
         return isLogoutButtonDisplayed;

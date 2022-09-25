@@ -15,7 +15,7 @@ public class LoginWithInvalidCredentials extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginAccountWithInvalidCredentials();
 
-        Assert.assertTrue(loginPage.isWrongCredentialsMessageDisplayed(), "Logout message is not displayed");
+        Assert.assertTrue(loginPage.isWrongCredentialsMessageDisplayed(), "Meessage is not displayed");
     }
 
 }

@@ -2,6 +2,7 @@ package drivermanager;
 
 import org.openqa.selenium.WebDriver;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public abstract class DriverManager {
@@ -23,6 +24,11 @@ public abstract class DriverManager {
 
     public void removeTimeout() {
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+    }
+
+    public void switchTab() {
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(1));
     }
 
     public void quitDriver() {

@@ -10,7 +10,7 @@ import pages.LoginPage;
 public class LoginWithInvalidCredentials extends BaseTest {
 
     @Test
-    @Description("Log in by existed account")
+    @Description("Log in with invalid credentials")
     public void loginAccountTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginAccountWithInvalidCredentials();

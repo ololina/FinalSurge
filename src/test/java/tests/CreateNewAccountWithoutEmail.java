@@ -9,7 +9,7 @@ import pages.RegisterPage;
 public class CreateNewAccountWithoutEmail extends BaseTest {
 
     @Test
-    @Description("New account creation")
+    @Description("New account creation without email")
     public void createAccountWithoutEmailTest() {
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.registerAccountWithoutEmail();

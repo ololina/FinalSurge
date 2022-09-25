@@ -1,6 +1,5 @@
 package pages;
 
-import constants.Credentials;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.FakeMessageGenerator;
@@ -11,8 +10,10 @@ public class EditProfilePage extends BasePage {
     }
     String newLastName = FakeMessageGenerator.generateSurname();
 
-    private By lastNameInput = By.id("lname");
+    private By lastNameInput = By.xpath("//div[contains(@class, 'span5')]//input[@name='lname']");
     private By saveButton = By.name("btnSubmit");
+    private By maleRadioButton = By.xpath("//label[contains(@class, 'radio inline')]//input[@value='m']");
+    private By femaleRadioButton = By.xpath("//label[contains(@class, 'radio inline')]//input[@value='f']");
 
     public void editLastName() {
         driver.findElement(lastNameInput).clear();
@@ -20,12 +21,19 @@ public class EditProfilePage extends BasePage {
     }
 
     public String getUpdatedLastName() {
-        String updatedLastName = driver.findElement(lastNameInput).getText();
-        return updatedLastName;
+        return newLastName;
     }
 
     public void clickSaveButton() {
         driver.findElement(saveButton).click();
+    }
+
+    public void chooseMaleRadioButton() {
+        driver.findElement(maleRadioButton).click();
+    }
+
+    public void chooseFemaleRadioButton() {
+        driver.findElement(femaleRadioButton).click();
     }
 
 

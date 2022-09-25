@@ -3,13 +3,15 @@ package tests;
 import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.EditProfilePage;
+import pages.MainPage;
+import pages.RegisterPage;
+import pages.SettingsPage;
 
-public class UpdateLastNameTest extends BaseTest {
-
+public class ChooseFemaleGenderInSettingsTest extends BaseTest {
     @Test
-    @Description("Update last name")
-    public void updateLastNameTest() {
+    @Description("Choose gender in settings")
+    public void loginAccountTest() {
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.registerAccount();
         MainPage mainPage = new MainPage(driver);
@@ -17,10 +19,9 @@ public class UpdateLastNameTest extends BaseTest {
         SettingsPage settingsPage = new SettingsPage(driver);
         settingsPage.clickEditProfile();
         EditProfilePage editProfilePage = new EditProfilePage(driver);
-        editProfilePage.editLastName();
-        String updatedLastName = editProfilePage.getUpdatedLastName();
+        editProfilePage.chooseFemaleRadioButton();
         editProfilePage.clickSaveButton();
 
-        Assert.assertTrue(settingsPage.getUpdatedLastName().contains(updatedLastName),  "Last name doesn't match");
+        Assert.assertTrue(settingsPage.getFemaleGender().contains("Female"),  "Wrong gender");
     }
 }

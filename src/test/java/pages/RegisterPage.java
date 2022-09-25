@@ -1,6 +1,5 @@
 package pages;
 
-import constants.Credentials;
 import constants.Urls;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
@@ -8,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import utils.FakeMessageGenerator;
 
 public class RegisterPage extends BasePage {
-
-
 
     private By firstNameInput = By.id("create_first");
     private By lastNameInput = By.id("create_last");

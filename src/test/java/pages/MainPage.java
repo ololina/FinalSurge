@@ -3,7 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.time.Duration;
 
 public class MainPage extends BasePage {
 
@@ -13,6 +12,8 @@ public class MainPage extends BasePage {
 
     private By logoutButton = By.xpath("//a[contains(@href, 'logout.cshtml')]");
     private By settingsButton = By.xpath("//a[contains(@href, 'UserProfile.cshtml')]");
+    private By giveFeedbackButton = By.xpath("//*[contains(@href, 'Feedback.cshtml')]");
+
 
 
     public boolean isLogoutButtonDisplayed() {
@@ -26,5 +27,9 @@ public class MainPage extends BasePage {
 
     public void clickSettings() {
         driver.findElement(settingsButton).click();
+    }
+
+    public void clickFeedbackButton() {
+        driver.findElement(giveFeedbackButton).click();
     }
 }

@@ -21,4 +21,12 @@ public class FakeMessageGenerator {
     public static String generateEmail() {
         return new Faker().internet().emailAddress();
     }
+
+    public static String generatePhoneNumber() {
+        return new Faker().phoneNumber().phoneNumber();
+    }
+
+    public static String generateRandomText() {
+        return new Faker().harryPotter().quote();
+    }
 }

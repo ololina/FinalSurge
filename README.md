@@ -5,3 +5,6 @@ cases:
 3. Log out from account
 4. Log in with invalid credentials
 5. Create account without email
+6. Update last name in settings
+7. Choose male gender in settings
+8. Choose female gender in settings

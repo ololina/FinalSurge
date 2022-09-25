@@ -9,7 +9,7 @@ import pages.RegisterPage;
 
 public class LogoutTest extends BaseTest {
     @Test
-    @Description("New account creation")
+    @Description("Log out from account test")
     public void logoutFromAccountTest() {
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.registerAccount();

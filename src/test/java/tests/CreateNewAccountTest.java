@@ -12,7 +12,7 @@ public class CreateNewAccountTest extends BaseTest {
     @Description("New account creation")
     public void createAccountTest() {
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.registerAccountWithoutEmail();
+        registerPage.registerAccount();
         MainPage mainPage = new MainPage(driver);
 
         Assert.assertTrue(mainPage.isLogoutButtonDisplayed(), "Logout button is not displayed");

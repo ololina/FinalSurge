@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
-import pages.RegisterPage;
+
 
 public class LoginTest extends BaseTest {
 

@@ -1,9 +1,11 @@
 package tests;
 
 import io.qameta.allure.Description;
+import models.RegisterNewAccountModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
+import testdata.PrepareRegisterNewAccountData;
 
 public class UpdateLastNameTest extends BaseTest {
 
@@ -11,7 +13,8 @@ public class UpdateLastNameTest extends BaseTest {
     @Description("Update last name")
     public void updateLastNameTest() {
         RegisterPage registerPage = new RegisterPage(driver);
-        registerPage.registerAccount();
+        RegisterNewAccountModel registerNewAccountModel = PrepareRegisterNewAccountData.getValidData();
+        registerPage.registerAccountWithBuilder(registerNewAccountModel);
         MainPage mainPage = new MainPage(driver);
         mainPage.clickSettings();
         SettingsPage settingsPage = new SettingsPage(driver);

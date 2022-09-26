@@ -2,8 +2,10 @@ package pages;
 
 import constants.Urls;
 import io.qameta.allure.Step;
+import models.RegisterNewAccountModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import testdata.PrepareRegisterNewAccountData;
 import utils.FakeMessageGenerator;
 
 public class RegisterPage extends BasePage {
@@ -27,6 +29,16 @@ public class RegisterPage extends BasePage {
         driver.get(Urls.REGISTER_URL);
     }
 
+    public void registerAccountWithBuilder(RegisterNewAccountModel data) {
+        driver.get(Urls.REGISTER_URL);
+        driver.findElement(firstNameInput).sendKeys(data.getFirstName());
+        driver.findElement(lastNameInput).sendKeys(data.getLastName());
+        driver.findElement(emailInput).sendKeys(data.getEmailAddress());
+        driver.findElement(passwordInput).sendKeys(data.getPassword());
+        driver.findElement(passwordConfirmInput).sendKeys(data.getMatchPassword());
+        driver.findElement(createNewAccountButton).click();
+    }
+
     @Step("Register account")
     public void registerAccount() {
         driver.get(Urls.REGISTER_URL);
@@ -41,13 +53,12 @@ public class RegisterPage extends BasePage {
     }
 
     @Step("Register account without Email")
-    public void registerAccountWithoutEmail() {
+    public void registerAccountWithoutEmail(RegisterNewAccountModel data) {
         driver.get(Urls.REGISTER_URL);
-        driver.findElement(firstNameInput).sendKeys(FakeMessageGenerator.generateName());
-        driver.findElement(lastNameInput).sendKeys(FakeMessageGenerator.generateSurname());
-        String password = FakeMessageGenerator.generatePassword();
-        driver.findElement(passwordInput).sendKeys(password);
-        driver.findElement(passwordConfirmInput).sendKeys(password);
+        driver.findElement(firstNameInput).sendKeys(data.getFirstName());
+        driver.findElement(lastNameInput).sendKeys(data.getLastName());
+        driver.findElement(passwordInput).sendKeys(data.getPassword());
+        driver.findElement(passwordConfirmInput).sendKeys(data.getMatchPassword());
         driver.findElement(createNewAccountButton).click();
     }
 

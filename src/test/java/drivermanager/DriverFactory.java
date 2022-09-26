@@ -9,8 +9,8 @@ public class DriverFactory {
             case CHROME:
                 driverManager = new ChromeDriverManagerBoniGarcia();
                 break;
-            case SAFARI:
-                driverManager = new SafariDriverManager();
+            case FIREFOX:
+                driverManager = new FirefoxDriverManagerWithBoniGarcia();
                 break;
             default:
                 throw new IllegalStateException("Unexpected driver type" + driverType);

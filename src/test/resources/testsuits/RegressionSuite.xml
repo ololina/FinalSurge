@@ -8,7 +8,6 @@
             <class name="tests.CreateNewAccountWithoutEmail"/>
             <class name="tests.LoginWithInvalidCredentials"/>
             <class name="tests.LoginTest"/>
-            <class name="tests.LoginWithInvalidCredentials"/>
             <class name="tests.LogoutTest"/>
             <class name="tests.ChooseFemaleGenderInSettingsTest"/>
             <class name="tests.ChooseMaleGenderInSettingsTest"/>

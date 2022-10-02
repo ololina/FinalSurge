@@ -1,10 +1,15 @@
 package pages;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import utils.FakeMessageGenerator;
 
 public class EditProfilePage extends BasePage {
+
+    private static  final Logger LOGGER = LogManager.getLogger(EditProfilePage.class.getName());
+
     public EditProfilePage(WebDriver driver) {
         super(driver);
     }
@@ -18,6 +23,7 @@ public class EditProfilePage extends BasePage {
     public void editLastName() {
         driver.findElement(lastNameInput).clear();
         driver.findElement(lastNameInput).sendKeys(newLastName);
+        LOGGER.info("New last name is entered");
     }
 
     public String getUpdatedLastName() {
@@ -26,14 +32,17 @@ public class EditProfilePage extends BasePage {
 
     public void clickSaveButton() {
         driver.findElement(saveButton).click();
+        LOGGER.info("New last name is saved");
     }
 
     public void chooseMaleRadioButton() {
         driver.findElement(maleRadioButton).click();
+        LOGGER.info("Male gender is chosen");
     }
 
     public void chooseFemaleRadioButton() {
         driver.findElement(femaleRadioButton).click();
+        LOGGER.info("Female gender is chosen");
     }
 
 

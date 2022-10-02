@@ -1,10 +1,14 @@
 package pages;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
 public class MainPage extends BasePage {
+
+    private static  final Logger LOGGER = LogManager.getLogger(MainPage.class.getName());
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -22,13 +26,16 @@ public class MainPage extends BasePage {
 
     public void clickLogout() {
         driver.findElement(logoutButton).click();
+        LOGGER.info("Logout button is clicked");
     }
 
     public void clickSettings() {
         driver.findElement(settingsButton).click();
+        LOGGER.info("Settings button is clicked");
     }
 
     public void clickFeedbackButton() {
         driver.findElement(giveFeedbackButton).click();
+        LOGGER.info("Feedback button is clicked");
     }
 }

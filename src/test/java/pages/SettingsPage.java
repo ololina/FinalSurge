@@ -1,9 +1,13 @@
 package pages;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SettingsPage extends BasePage {
+
+    private static  final Logger LOGGER = LogManager.getLogger(LoginPage.class.getName());
 
     public SettingsPage(WebDriver driver) {
         super(driver);
@@ -16,6 +20,7 @@ public class SettingsPage extends BasePage {
 
     public void clickEditProfile() {
         driver.findElement(editProfilesButton).click();
+        LOGGER.info("Edit profile button is clicked");
     }
 
     public String getUpdatedLastName() {

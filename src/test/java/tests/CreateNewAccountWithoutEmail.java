@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegisterPage;
 import testdata.PrepareRegisterNewAccountData;
+import utils.RetryAnalyzer;
 
-public class CreateNewAccountWithoutEmail extends BaseTest {
+public class CreateNewAccountWithoutEmail extends BaseWithThreadLocalTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 1, threadPoolSize = 2)
     @Description("New account creation without email")
     public void createAccountWithoutEmailTest() {
-        RegisterPage registerPage = new RegisterPage(driver);
+        RegisterPage registerPage = new RegisterPage(driverManager.getDriver());
         RegisterNewAccountModel registerNewAccountModel = PrepareRegisterNewAccountData.getValidData();
         registerPage.registerAccountWithoutEmail(registerNewAccountModel);
 

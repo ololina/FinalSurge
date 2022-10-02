@@ -5,16 +5,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.MainPage;
+import utils.RetryAnalyzer;
 
 
-public class LoginTest extends BaseTest {
+public class LoginTest extends BaseWithThreadLocalTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 2, threadPoolSize = 2)
     @Description("Log in by existed account")
     public void loginAccountTest() {
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driverManager.getDriver());
         loginPage.loginAccount();
-        MainPage mainPage = new MainPage(driver);
+        MainPage mainPage = new MainPage(driverManager.getDriver());
 
         Assert.assertTrue(mainPage.isLogoutButtonDisplayed(), "Logout button is not displayed");
     }

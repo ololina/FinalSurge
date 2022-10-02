@@ -1,14 +1,13 @@
-package drivermanager;
+package drivermanager.threadlocalmanager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-
-public class FirefoxDriverManagerWithBoniGarcia extends DriverManager {
+public class FirefoxDriverThreadLocalManager extends DriverThreadLocalManager {
 
     @Override
     public void createDriver() {
         WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        threadLocalDriver.set(new FirefoxDriver());
     }
 }

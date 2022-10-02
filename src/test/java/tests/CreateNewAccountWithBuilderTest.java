@@ -7,16 +7,17 @@ import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegisterPage;
 import testdata.PrepareRegisterNewAccountData;
+import utils.RetryAnalyzer;
 
-public class CreateNewAccountWithBuilderTest extends BaseTest {
+public class CreateNewAccountWithBuilderTest extends BaseWithThreadLocalTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 0, threadPoolSize = 2)
     @Description("New account creation")
     public void createAccountTest() {
-        RegisterPage registerPage = new RegisterPage(driver);
+        RegisterPage registerPage = new RegisterPage(driverManager.getDriver());
         RegisterNewAccountModel registerNewAccountModel = PrepareRegisterNewAccountData.getValidData();
         registerPage.registerAccountWithBuilder(registerNewAccountModel);
-        MainPage mainPage = new MainPage(driver);
+        MainPage mainPage = new MainPage(driverManager.getDriver());
 
         Assert.assertTrue(mainPage.isLogoutButtonDisplayed(), "Logout button is not displayed");
     }

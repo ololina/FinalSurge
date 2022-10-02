@@ -5,10 +5,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.RegisterPage;
+import utils.RetryAnalyzer;
 
 public class CreateNewAccountTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("New account creation")
     public void createAccountTest() {
         RegisterPage registerPage = new RegisterPage(driver);

@@ -9,19 +9,21 @@ import pages.MainPage;
 import pages.RegisterPage;
 import pages.SettingsPage;
 import testdata.PrepareRegisterNewAccountData;
+import utils.RetryAnalyzer;
 
-public class ChooseFemaleGenderInSettingsTest extends BaseTest {
-    @Test
+public class ChooseFemaleGenderInSettingsTest extends BaseWithThreadLocalTest {
+
+    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 4, threadPoolSize = 2)
     @Description("Choose gender in settings")
     public void loginAccountTest() {
-        RegisterPage registerPage = new RegisterPage(driver);
+        RegisterPage registerPage = new RegisterPage(driverManager.getDriver());
         RegisterNewAccountModel registerNewAccountModel = PrepareRegisterNewAccountData.getValidData();
         registerPage.registerAccountWithBuilder(registerNewAccountModel);
-        MainPage mainPage = new MainPage(driver);
+        MainPage mainPage = new MainPage(driverManager.getDriver());
         mainPage.clickSettings();
-        SettingsPage settingsPage = new SettingsPage(driver);
+        SettingsPage settingsPage = new SettingsPage(driverManager.getDriver());
         settingsPage.clickEditProfile();
-        EditProfilePage editProfilePage = new EditProfilePage(driver);
+        EditProfilePage editProfilePage = new EditProfilePage(driverManager.getDriver());
         editProfilePage.chooseFemaleRadioButton();
         editProfilePage.clickSaveButton();
 

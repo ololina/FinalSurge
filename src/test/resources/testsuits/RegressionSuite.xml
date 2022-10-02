@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Regression Suite" parallel="classes">
+    <parameter name="browserType" value="chrome"/>
+    <test name="Run all tests">
+        <classes>
+            <class name="tests.CreateNewAccountWithBuilderTest"/>
+            <class name="tests.CreateNewAccountWithoutEmail"/>
+            <class name="tests.LoginWithInvalidCredentials"/>
+            <class name="tests.LoginTest"/>
+            <class name="tests.LoginWithInvalidCredentials"/>
+            <class name="tests.LogoutTest"/>
+            <class name="tests.ChooseFemaleGenderInSettingsTest"/>
+            <class name="tests.ChooseMaleGenderInSettingsTest"/>
+            <class name="tests.UpdateLastNameTest"/>
+            <class name="tests.OpenPrivacyPolicyPageTest"/>
+            <class name="tests.GiveFeedbackTest"/>
+        </classes>
+    </test>
+</suite>

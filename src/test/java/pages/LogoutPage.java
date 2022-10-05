@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LogoutPage extends BasePage {
 
-    private static  final Logger LOGGER = LogManager.getLogger(LogoutPage.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(LogoutPage.class.getName());
 
     public LogoutPage(WebDriver driver) {
         super(driver);

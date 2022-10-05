@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 import utils.TestListeners;
 
 @Listeners(TestListeners.class)
-public class BaseWithThreadLocalTest {
+public abstract class BaseWithThreadLocalTest {
 
     DriverThreadLocalManager driverManager;
 

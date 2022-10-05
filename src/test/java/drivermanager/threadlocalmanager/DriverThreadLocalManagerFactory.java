@@ -1,6 +1,5 @@
 package drivermanager.threadlocalmanager;
 import drivermanager.DriverType;
-import drivermanager.FirefoxDriverManagerWithBoniGarcia;
 
 public class DriverThreadLocalManagerFactory {
 

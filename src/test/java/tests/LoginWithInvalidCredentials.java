@@ -14,7 +14,7 @@ public class LoginWithInvalidCredentials extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(LoginWithInvalidCredentials.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 3, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
     @Description("Log in with invalid credentials")
     public void loginAccountTest() {
         LoginPage loginPage = new LoginPage(driverManager.getDriver());
@@ -24,5 +24,4 @@ public class LoginWithInvalidCredentials extends BaseWithThreadLocalTest {
         LOGGER.info("Check wrong credentials message is shown");
         Assert.assertTrue(loginPage.isWrongCredentialsMessageDisplayed(), "Message is not displayed");
     }
-
 }

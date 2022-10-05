@@ -17,7 +17,7 @@ public class ChooseMaleGenderInSettingsTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(ChooseMaleGenderInSettingsTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 5, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
     @Description("Choose gender in settings")
     public void loginAccountTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

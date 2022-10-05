@@ -5,7 +5,6 @@ import utils.FakeMessageGenerator;
 
 public class PrepareRegisterNewAccountData {
 
-
     public static RegisterNewAccountModel getValidData() {
         String password = FakeMessageGenerator.generatePassword();
         return RegisterNewAccountModel.builder().firstName(FakeMessageGenerator.generateName())
@@ -14,6 +13,5 @@ public class PrepareRegisterNewAccountData {
                 .password(password)
                 .matchPassword(password)
                 .build();
-
     }
 }

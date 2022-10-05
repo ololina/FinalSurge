@@ -15,7 +15,7 @@ public class CreateNewAccountWithBuilderTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(CreateNewAccountWithBuilderTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, priority = 0, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
     @Description("New account creation")
     public void createAccountTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

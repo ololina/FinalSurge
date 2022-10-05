@@ -44,7 +44,4 @@ public class EditProfilePage extends BasePage {
         driver.findElement(femaleRadioButton).click();
         LOGGER.info("Female gender is chosen");
     }
-
-
-
 }

@@ -50,7 +50,4 @@ public class LoginPage extends BasePage {
         boolean isWrongCredentialsMessageDisplayed = driver.findElement(wrongCredentialsMessage).isDisplayed();
         return isWrongCredentialsMessageDisplayed;
     }
-
-
-
 }

@@ -14,7 +14,7 @@ public class LoginWithInvalidCredentials extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(LoginWithInvalidCredentials.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("Log in with invalid credentials")
     public void loginAccountTest() {
         LoginPage loginPage = new LoginPage(driverManager.getDriver());

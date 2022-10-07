@@ -15,7 +15,7 @@ public class LoginTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(LoginTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("Log in by existed account")
     public void loginAccountTest() {
         LoginPage loginPage = new LoginPage(driverManager.getDriver());

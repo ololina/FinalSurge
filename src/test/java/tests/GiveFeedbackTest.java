@@ -16,7 +16,7 @@ public class GiveFeedbackTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(GiveFeedbackTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("Leave feedback test")
     public void giveFeedbackTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

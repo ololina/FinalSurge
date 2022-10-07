@@ -15,7 +15,7 @@ public class CreateNewAccountWithoutEmail extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(CreateNewAccountWithoutEmail.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("New account creation without email")
     public void createAccountWithoutEmailTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

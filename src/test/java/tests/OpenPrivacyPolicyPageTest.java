@@ -14,7 +14,7 @@ public class OpenPrivacyPolicyPageTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(OpenPrivacyPolicyPageTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("Open privacy policy page")
     public void createAccountTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

@@ -14,7 +14,7 @@ public class UpdateLastNameTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(UpdateLastNameTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("Update last name")
     public void updateLastNameTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

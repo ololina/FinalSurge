@@ -17,7 +17,7 @@ public class LogoutTest extends BaseWithThreadLocalTest {
 
     private static  final Logger LOGGER = LogManager.getLogger(LogoutTest.class.getName());
 
-    @Test(retryAnalyzer = RetryAnalyzer.class, threadPoolSize = 2)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("Log out from account test")
     public void logoutFromAccountTest() {
         RegisterPage registerPage = new RegisterPage(driverManager.getDriver());

@@ -8,7 +8,7 @@ import utils.FakeMessageGenerator;
 
 public class EditProfilePage extends BasePage {
 
-    private static  final Logger LOGGER = LogManager.getLogger(EditProfilePage.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(EditProfilePage.class.getName());
 
     public EditProfilePage(WebDriver driver) {
         super(driver);
